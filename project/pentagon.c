@@ -1,5 +1,8 @@
+//#include <msp340.h>
 #include "shape.h"
 #include "pentagon.h"
+#include "lcddraw.h"
+#include "lcdutils.h"
 
 void pentagon(u_char centerC, u_char centerR, u_char size)
 {
