@@ -12,7 +12,8 @@ void state_advance()
 {
   switch(current_state) {
   case START:
-    clearScreen(COLOR_BLUE);
+    clearScreen(COLOR_GREEN);
+    pentagon(40, 70, 30);
     if(switch1_state_down){
       current_state = MENU_OPTION0;
     }
@@ -20,6 +21,6 @@ void state_advance()
 
   case MENU_OPTION0:
     clearScreen(COLOR_GREEN);
-    pentagon(40, 70, 30);
+    pentagon(80, 90, 20);
   }
 }

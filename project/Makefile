@@ -1,4 +1,4 @@
-# makfile configuration
+# makfile configuration 
 COMMON_OBJECTS  =
 CPU             = msp430g2553
 CFLAGS          = -mmcu=${CPU} -I../timerLib -I../shapeLib -I../lcdLib
@@ -13,7 +13,7 @@ all:
 	(cd ../shapeLib && make libShape.a)
 	(cd ../timerLib && make install)
 
-project_main.elf: ${COMMON_OBJECTS} main.o pentagon.o stateMachines.o switches.o ../lcdLib/lcdutils.o ../lcdLib/lcddraw.o ../lcdLib/libLcd.a ../shapeLib/libShape.a ../lib/libTimer.a
+project_main.elf: ${COMMON_OBJECTS} main.o pentagon.o stateMachines.o switches.o ../lcdLib/lcdutils.o ../lcdLib/lcddraw.o ../lib/libTimer.a ../lcdLib/libLcd.a
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
 load: project_main.elf
