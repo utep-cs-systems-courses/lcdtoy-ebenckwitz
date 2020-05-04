@@ -7,7 +7,7 @@
 #include "lcddraw.h"
 #include "8x12font.h"
 
-/*These are the menu options*/
+char tempo = 0;
 
 void state_advance()
 {
@@ -19,24 +19,41 @@ void state_advance()
   case 2:
     state_two();
     break;
+
+  case 3:
+    state_three();
+    break;
+
+  case 4:
+    state_four();
+    break;
   }
 }
 
 void state_one()
 {
+  tempo = 250;
   clearScreen(COLOR_GREEN);
   drawString8x12(20, 20, "hello", COLOR_BLACK, COLOR_GREEN);
   pentagon(50, 80, 30);
-  red_on = 1;
-  green_on = 1;
-  led_update();
 }
 
 void state_two()
 {
+  tempo = 50;
   clearScreen(COLOR_GREEN);
   drawString8x12(20, 20, "hello", COLOR_BLACK, COLOR_GREEN);
-  red_on = 0;
-  green_on = 1;
-  led_update();
+}
+
+void state_three()
+{
+  tempo = 200;
+  clearScreen(COLOR_GREEN);
+}
+
+void state_four()
+{
+  tempo = 5000;
+  clearScreen(COLOR_GREEN);
+  pentagon(40, 80, 60);
 }

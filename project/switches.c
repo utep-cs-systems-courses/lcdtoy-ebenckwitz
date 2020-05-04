@@ -37,7 +37,7 @@ switch_interrupt_handler()
   switch2_state_down = (p2val & SW2) ? 0 : 1;
   switch3_state_down = (p2val & SW3) ? 0 : 1;
   switch4_state_down = (p2val & SW4) ? 0 : 1;
-
+  
   if(switch1_state_down) {
     current_state = 1;
   }else if(switch2_state_down) {
